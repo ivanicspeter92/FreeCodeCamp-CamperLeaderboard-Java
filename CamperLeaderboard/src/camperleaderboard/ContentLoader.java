@@ -5,6 +5,10 @@
  */
 package camperleaderboard;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Scanner;
+
 /**
  *
  * @author peter.ivanics
@@ -16,7 +20,21 @@ public class ContentLoader {
         this.filePath = filePath;
     }
     
-    public String getContents() {
-        return null;
+    public String getContents()
+    {
+        try {
+            String readData = "";
+            Scanner in = new Scanner(new File(filePath));
+            while(in.hasNext())
+                readData += in.nextLine() + "\r\n";
+            in.close();
+            return  readData;
+        }
+        catch (Exception e)
+        {
+            e.getMessage();
+            return null;
+
+        }
     }
 }
