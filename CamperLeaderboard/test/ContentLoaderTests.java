@@ -39,12 +39,13 @@ public class ContentLoaderTests {
 
     @Test
     public void testLoadingCampersJSONFile() {
-        String filePath = "/data/campers.json";
+        String filePath = "data/campers.json";
         ContentLoader loader = new ContentLoader(filePath);
         String contents = loader.getContents();
         
         assertNotNull(contents);
-        assertTrue(contents.startsWith("[") && contents.endsWith("]"));
+        assertTrue(contents.startsWith("[")); 
+        assertTrue(contents.endsWith("]"));
         assertTrue(contents.contains("\"username\": \"ndburrus\""));
     }
     
