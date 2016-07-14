@@ -20,21 +20,19 @@ public class ContentLoader {
         this.filePath = filePath;
     }
     
-    public String getContents()
-    {
+    public String getContents() {
         try {
-            String readData = "";
-            Scanner in = new Scanner(new File(filePath));
-            while(in.hasNext())
-                readData += in.nextLine() + "\r\n";
-            in.close();
-            return  readData;
-        }
-        catch (Exception e)
-        {
+            String fileContents = "";
+            Scanner inputStream = new Scanner(new File(filePath));
+            
+            while(inputStream.hasNext())
+                fileContents += inputStream.nextLine();
+            
+            inputStream.close();
+            return fileContents;
+        } catch (Exception e) {
             e.getMessage();
-            return null;
-
+            return null; 
         }
     }
 }
