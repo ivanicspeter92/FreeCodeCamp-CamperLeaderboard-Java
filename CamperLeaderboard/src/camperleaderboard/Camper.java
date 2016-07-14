@@ -13,5 +13,12 @@ public class Camper
     int recent;
     Calendar lastUpdate;
 
+public Camper(String username, String img, int alltime, int recent, Calendar lastUpdate){
+    this.username = username;
+    this.img = img;
+    this.alltime = alltime;
+    this.recent = recent;
+    this.lastUpdate = lastUpdate;
+}
 
 }
